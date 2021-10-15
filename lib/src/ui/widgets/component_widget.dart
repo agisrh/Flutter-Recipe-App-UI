@@ -239,3 +239,39 @@ Widget uploadIcon({required String title, required String subtitle}) {
     ],
   );
 }
+
+Widget pagination({required String currentPage, required String nextPage}) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        'Cancel',
+        style: TextStyle(
+          fontSize: 17,
+          color: AppColors.secondary,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      RichText(
+        text: TextSpan(
+          text: '$currentPage/',
+          style: TextStyle(
+            fontSize: 17,
+            fontWeight: FontWeight.w700,
+            color: AppColors.titleText,
+          ),
+          children: <TextSpan>[
+            TextSpan(
+              text: nextPage,
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w700,
+                color: AppColors.secondaryText,
+              ),
+            )
+          ],
+        ),
+      ),
+    ],
+  );
+}

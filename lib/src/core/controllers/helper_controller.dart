@@ -5,3 +5,4 @@ export 'password_controller.dart';
 export 'dashboard_controller.dart';
 export 'other_controller.dart';
 export 'search_controller.dart';
+export 'upload_controller.dart';

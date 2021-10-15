@@ -241,6 +241,46 @@ Widget textfieldOTP({
   );
 }
 
+Widget textfield({
+  String hintText = '',
+  String isRequired = '',
+  required TextEditingController controller,
+}) {
+  return TextFormField(
+    controller: controller,
+    decoration: InputDecoration(
+      isDense: true,
+      hintText: hintText,
+      contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
+      hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(32)),
+        borderSide: BorderSide(color: AppColors.outline, width: 1),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(32)),
+        borderSide: BorderSide(color: AppColors.outline, width: 1),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(32.0)),
+        borderSide: BorderSide(color: AppColors.primary, width: 1.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(32.0)),
+        borderSide: BorderSide(color: AppColors.secondary, width: 1),
+      ),
+    ),
+    validator: (value) {
+      if (isRequired != '') {
+        if (value!.isEmpty) {
+          return '$isRequired';
+        }
+      }
+      return null;
+    },
+  );
+}
+
 Widget searchForm({required BuildContext context, bool redirect = false}) {
   final searchC = Get.put(SearchController());
   return Obx(
@@ -301,6 +341,79 @@ Widget searchForm({required BuildContext context, bool redirect = false}) {
           borderRadius: BorderRadius.all(Radius.circular(32.0)),
           borderSide: BorderSide(color: AppColors.form, width: 1),
         ),
+      ),
+    ),
+  );
+}
+
+Widget textarea({
+  String hintText = '',
+  String isRequired = '',
+  required TextEditingController controller,
+  required int minLines,
+}) {
+  return TextFormField(
+    minLines: minLines,
+    keyboardType: TextInputType.multiline,
+    maxLines: null,
+    controller: controller,
+    decoration: InputDecoration(
+      hintText: hintText,
+      hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderSide: BorderSide(color: AppColors.outline, width: 1),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderSide: BorderSide(color: AppColors.outline, width: 1),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderSide: BorderSide(color: AppColors.primary, width: 1.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderSide: BorderSide(color: AppColors.secondary, width: 1),
+      ),
+    ),
+    validator: (value) {
+      if (isRequired != '') {
+        if (value!.isEmpty) {
+          return '$isRequired';
+        }
+      }
+      return null;
+    },
+  );
+}
+
+Widget labelForm({required String label}) {
+  return Container(
+    margin: EdgeInsets.only(top: 24, bottom: 10),
+    child: Align(
+      alignment: Alignment.centerLeft,
+      child: Text(label, style: TextTypography.mH2),
+    ),
+  );
+}
+
+Widget richLabel({required String title1, required String title2}) {
+  return Container(
+    padding: EdgeInsets.only(top: 30, bottom: 15),
+    child: RichText(
+      text: TextSpan(
+        text: title1,
+        style: TextTypography.mH2,
+        children: <TextSpan>[
+          TextSpan(
+            text: title2,
+            style: TextStyle(
+              fontSize: 15.0,
+              color: AppColors.secondaryText,
+            ),
+          )
+        ],
       ),
     ),
   );

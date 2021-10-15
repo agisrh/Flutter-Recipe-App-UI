@@ -103,24 +103,7 @@ class SearchFormScreen extends StatelessWidget {
               ),
               Text('Category', style: TextTypography.mH2),
               buildFilter(choice),
-              Container(
-                padding: EdgeInsets.only(top: 30, bottom: 15),
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Cooking Duration',
-                    style: TextTypography.mH2,
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: ' (in minutes)',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: AppColors.secondaryText,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              richLabel(title1: 'Cooking Duration', title2: ' (in minutes)'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -130,7 +113,7 @@ class SearchFormScreen extends StatelessWidget {
                 ],
               ),
               buildSlider(),
-              SizedBox(height: 15),
+              SizedBox(height: 35),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

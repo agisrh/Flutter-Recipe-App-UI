@@ -54,4 +54,9 @@ class TextTypography {
     fontSize: 12,
     color: AppColors.secondaryText,
   );
+
+  static const TextStyle p1_primary = TextStyle(
+    color: AppColors.primary,
+    fontWeight: FontWeight.w700,
+  );
 }

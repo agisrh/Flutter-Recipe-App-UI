@@ -138,7 +138,7 @@ class DetailReciperScreen extends StatelessWidget {
                       ),
                       Divider(thickness: 1),
                       Container(
-                        padding: EdgeInsets.only(top: 16),
+                        padding: EdgeInsets.symmetric(vertical: 16),
                         child: Text('Ingredients', style: TextTypography.mH3),
                       ),
                       Expanded(
@@ -147,7 +147,7 @@ class DetailReciperScreen extends StatelessWidget {
                             reverse: false,
                             scrollDirection: Axis.vertical,
                             itemCount: ingredients.length,
-                            padding: EdgeInsets.only(top: 16),
+                            padding: EdgeInsets.only(bottom: 16),
                             itemBuilder: (context, index) {
                               return Container(
                                 margin: EdgeInsets.only(bottom: 15),

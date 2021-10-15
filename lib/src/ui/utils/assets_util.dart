@@ -17,4 +17,5 @@ abstract class AssetIcons {
   static const filter = 'assets/icons/filter.svg';
   static const arrowUpward = 'assets/icons/arrow-upward.svg';
   static const heart = 'assets/icons/heart.svg';
+  static const image = 'assets/icons/image.svg';
 }

@@ -269,22 +269,22 @@ Widget searchForm({required BuildContext context, bool redirect = false}) {
           ),
           child: SvgPicture.asset(AssetIcons.search),
         ),
-        suffixIcon: searchC.hasTxtSearch.value
-            ? Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 5,
-                  horizontal: 15,
-                ),
-                child: GestureDetector(
-                  child: Icon(
-                    MfgLabs.cancel_circled,
-                    color: AppColors.mainText,
-                    size: 20,
-                  ),
-                  onTap: () => searchC.clearForm(),
-                ),
-              )
-            : Container(),
+        suffixIcon: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 5,
+            horizontal: 15,
+          ),
+          child: GestureDetector(
+            child: Icon(
+              MfgLabs.cancel_circled,
+              color: searchC.hasTxtSearch.value
+                  ? AppColors.mainText
+                  : Colors.transparent,
+              size: 20,
+            ),
+            onTap: () => searchC.clearForm(),
+          ),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(32)),
           borderSide: BorderSide(color: AppColors.form, width: 1),

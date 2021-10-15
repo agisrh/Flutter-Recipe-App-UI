@@ -55,6 +55,54 @@ class Button extends StatelessWidget {
   }
 }
 
+class ButtonDefault extends StatelessWidget {
+  final String txtButton;
+  final GestureTapCallback onPressed;
+  final double width;
+
+  ButtonDefault(
+      {required this.onPressed,
+      required this.txtButton,
+      this.width = double.infinity});
+  @override
+  Widget build(BuildContext context) {
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      backgroundColor: AppColors.form,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(32),
+        ),
+      ),
+    );
+    return SizedBox(
+      width: width,
+      child: TextButton(
+        style: flatButtonStyle,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                txtButton,
+                maxLines: 1,
+                style: TextStyle(
+                  color: AppColors.mainText,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+        ),
+        onPressed: () {
+          onPressed();
+        },
+      ),
+    );
+  }
+}
+
 class ButtonIcon extends StatelessWidget {
   final String txtButton;
   final Color color;

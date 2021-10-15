@@ -8,6 +8,7 @@ import 'package:recipe_app/src/ui/screens/intro/onboarding_screen.dart';
 import 'package:recipe_app/src/ui/screens/main/home_screen.dart';
 import 'package:recipe_app/src/ui/screens/recipe/detail_recipe_screen.dart';
 import 'package:recipe_app/src/ui/screens/search/search_form_screen.dart';
+import 'package:recipe_app/src/ui/screens/upload/step1_screen.dart';
 
 class Routes {
   static final pages = [
@@ -46,6 +47,10 @@ class Routes {
     GetPage(
       name: '/recipe/detail',
       page: () => DetailReciperScreen(),
+    ),
+    GetPage(
+      name: '/upload/step/1',
+      page: () => Step1Screen(),
     ),
   ];
 }

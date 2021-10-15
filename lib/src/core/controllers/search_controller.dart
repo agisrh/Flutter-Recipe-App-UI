@@ -23,4 +23,7 @@ class SearchController extends GetxController {
   }
 
   void clearForm() => search.clear();
+
+  var isFilter = false.obs;
+  void filter() => isFilter.value = true;
 }

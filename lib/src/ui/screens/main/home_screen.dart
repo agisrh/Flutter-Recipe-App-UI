@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe_app/src/ui/screens/main/dashboard_screen.dart';
+import 'package:recipe_app/src/ui/screens/upload/step1_screen.dart';
 import 'package:recipe_app/src/ui/utils/helper_util.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
     // List pages
     List<Widget> _pages = [
       DashboardScreen(),
-      Page2(),
+      Step1Screen(),
       Page3(),
       Page4(),
       Page5(),

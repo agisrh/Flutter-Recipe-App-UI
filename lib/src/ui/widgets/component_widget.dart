@@ -161,6 +161,45 @@ Widget buildFilter(List choice) {
   );
 }
 
+Widget buildSlider() {
+  final filterC = Get.put(OtherController());
+  return SliderTheme(
+    data: SliderThemeData(
+      trackShape: CustomTrackShape(),
+    ),
+    child: Obx(
+      () => Slider(
+        value: filterC.sliderValue.value,
+        min: 0,
+        max: 60,
+        activeColor: AppColors.primary,
+        inactiveColor: AppColors.form,
+        label: filterC.sliderValue.value.round().toString(),
+        onChanged: (double value) {
+          filterC.setSlider(value);
+        },
+      ),
+    ),
+  );
+}
+
+class CustomTrackShape extends RoundedRectSliderTrackShape {
+  Rect getPreferredRect({
+    required RenderBox parentBox,
+    Offset offset = Offset.zero,
+    required SliderThemeData sliderTheme,
+    bool isEnabled = false,
+    bool isDiscrete = false,
+  }) {
+    final double trackHeight = 3;
+    final double trackLeft = offset.dx;
+    final double trackTop =
+        offset.dy + (parentBox.size.height - trackHeight) / 2;
+    final double trackWidth = parentBox.size.width;
+    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
+  }
+}
+
 Widget divider() {
   return Container(color: AppColors.form, height: 8);
 }
@@ -171,5 +210,32 @@ Widget searchHistory({required String text}) {
     leading: Icon(Entypo.clock, color: AppColors.secondaryText),
     title: Text(text, style: TextTypography.mH2_500),
     trailing: SvgPicture.asset(AssetIcons.arrowUpward),
+  );
+}
+
+Widget uploadIcon({required String title, required String subtitle}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      SvgPicture.asset(AssetIcons.image),
+      Container(
+        margin: EdgeInsets.symmetric(vertical: 5),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: AppColors.titleText,
+          ),
+        ),
+      ),
+      Text(
+        subtitle,
+        style: TextStyle(
+          fontSize: 12,
+          color: AppColors.secondaryText,
+        ),
+      )
+    ],
   );
 }

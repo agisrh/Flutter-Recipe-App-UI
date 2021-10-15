@@ -51,6 +51,7 @@ class PopularRecipeScreen extends StatelessWidget {
       ),
     ];
     return GridView.builder(
+      shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
         mainAxisExtent: 250,

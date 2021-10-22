@@ -63,7 +63,7 @@ class DashboardScreen extends StatelessWidget {
                       child: TabBarView(
                         children: <Widget>[
                           PopularRecipeScreen(),
-                          Container(),
+                          PopularRecipeScreen(),
                         ],
                       ),
                     ),

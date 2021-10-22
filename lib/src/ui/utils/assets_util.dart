@@ -19,4 +19,5 @@ abstract class AssetIcons {
   static const heart = 'assets/icons/heart.svg';
   static const image = 'assets/icons/image.svg';
   static const drag = 'assets/icons/drag-icon.svg';
+  static const camera = 'assets/icons/camera.svg';
 }

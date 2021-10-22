@@ -176,15 +176,7 @@ class DetailReciperScreen extends StatelessWidget {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    CircleAvatar(
-                                      radius: 15,
-                                      backgroundColor: AppColors.mainText,
-                                      child: Text(
-                                        (index + 1).toString(),
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 12),
-                                      ),
-                                    ),
+                                    stepNumber(number: index + 1),
                                     SizedBox(width: 16),
                                     Flexible(
                                       child: Column(

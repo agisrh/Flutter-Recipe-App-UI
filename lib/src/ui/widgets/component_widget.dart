@@ -244,12 +244,15 @@ Widget pagination({required String currentPage, required String nextPage}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Text(
-        'Cancel',
-        style: TextStyle(
-          fontSize: 17,
-          color: AppColors.secondary,
-          fontWeight: FontWeight.w700,
+      InkWell(
+        onTap: () => Get.back(),
+        child: Text(
+          'Cancel',
+          style: TextStyle(
+            fontSize: 17,
+            color: AppColors.secondary,
+            fontWeight: FontWeight.w700,
+          ),
         ),
       ),
       RichText(
@@ -273,5 +276,19 @@ Widget pagination({required String currentPage, required String nextPage}) {
         ),
       ),
     ],
+  );
+}
+
+Widget stepNumber({required int number}) {
+  return CircleAvatar(
+    radius: 15,
+    backgroundColor: AppColors.mainText,
+    child: Text(
+      number.toString(),
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 12,
+      ),
+    ),
   );
 }

@@ -160,6 +160,7 @@ class ButtonIcon extends StatelessWidget {
 class ButtonOutline extends StatelessWidget {
   final String txtButton;
   final Color color;
+  final Color colorLabel;
   final GestureTapCallback onPressed;
   final bool disable;
   final double width;
@@ -169,6 +170,7 @@ class ButtonOutline extends StatelessWidget {
       required this.txtButton,
       required this.color,
       this.disable = false,
+      this.colorLabel = AppColors.outline,
       this.width = double.infinity});
   @override
   Widget build(BuildContext context) {
@@ -195,7 +197,7 @@ class ButtonOutline extends StatelessWidget {
                 txtButton,
                 maxLines: 1,
                 style: TextStyle(
-                  color: disable ? AppColors.outline : color,
+                  color: disable ? AppColors.outline : colorLabel,
                   fontWeight: FontWeight.w700,
                   fontSize: 15,
                 ),
@@ -209,6 +211,56 @@ class ButtonOutline extends StatelessWidget {
           }
         },
       ),
+    );
+  }
+}
+
+class ButtonSM extends StatelessWidget {
+  final String txtButton;
+  final Color color;
+  final GestureTapCallback onPressed;
+  final bool disable;
+
+  ButtonSM({
+    required this.onPressed,
+    required this.txtButton,
+    required this.color,
+    this.disable = false,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      backgroundColor: disable ? AppColors.form : color,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(32),
+        ),
+      ),
+    );
+    return TextButton(
+      style: flatButtonStyle,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              txtButton,
+              maxLines: 1,
+              style: TextStyle(
+                color: disable ? AppColors.mainText : Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
+      ),
+      onPressed: () {
+        if (!disable) {
+          onPressed();
+        }
+      },
     );
   }
 }

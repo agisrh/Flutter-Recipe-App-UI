@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recipe_app/src/ui/screens/demo.dart';
+import 'package:recipe_app/src/ui/screens/user/profile_screen.dart';
+import 'package:recipe_app/src/ui/utils/helper_util.dart';
 import 'package:recipe_app/src/ui/screens/main/dashboard_screen.dart';
 import 'package:recipe_app/src/ui/screens/upload/step1_screen.dart';
-import 'package:recipe_app/src/ui/utils/helper_util.dart';
+import 'package:recipe_app/src/ui/screens/notification/notification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -12,9 +15,9 @@ class HomeScreen extends StatelessWidget {
     List<Widget> _pages = [
       DashboardScreen(),
       Step1Screen(),
-      Page3(),
-      Page4(),
-      Page5(),
+      DashboardScreen(),
+      NotificationScreen(),
+      Sample2(),
     ];
     final navC = Get.put(NavbarController());
     return Obx(
@@ -98,34 +101,4 @@ class HomeScreen extends StatelessWidget {
 class NavbarController extends GetxController {
   var index = 0.obs;
   void setIndex(int page) => index.value = page;
-}
-
-class Page1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) =>
-      Scaffold(appBar: AppBar(title: Text('Home')));
-}
-
-class Page2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) =>
-      Scaffold(appBar: AppBar(title: Text('Upload')));
-}
-
-class Page3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) =>
-      Scaffold(appBar: AppBar(title: Text('Scan')));
-}
-
-class Page4 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) =>
-      Scaffold(appBar: AppBar(title: Text('Notification')));
-}
-
-class Page5 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) =>
-      Scaffold(appBar: AppBar(title: Text('Profile')));
 }

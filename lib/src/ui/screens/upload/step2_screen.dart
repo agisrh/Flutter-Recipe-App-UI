@@ -52,9 +52,69 @@ class Step2Screen extends StatelessWidget {
                     Container(
                       margin:
                           EdgeInsets.symmetric(horizontal: 15, vertical: 30),
-                      child: ButtonDefault(
+                      child: ButtonOutline(
                         onPressed: () {},
+                        color: AppColors.outline,
+                        colorLabel: AppColors.titleText,
                         txtButton: '+ Ingredient',
+                      ),
+                    ),
+                    divider(),
+                    Container(
+                      margin: EdgeInsets.only(left: 24, bottom: 10),
+                      child: labelForm(label: 'Steps'),
+                    ),
+                    ListTile(
+                      minLeadingWidth: 10,
+                      leading: stepNumber(number: 1),
+                      title: textarea(
+                        controller: step2C.ingredient,
+                        hintText: 'Tell a little about your food',
+                        minLines: 4,
+                      ),
+                      subtitle: Container(
+                        margin: EdgeInsets.only(top: 8),
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.form,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                        ),
+                        child: SvgPicture.asset(AssetIcons.camera),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(24),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ButtonDefault(
+                            width: SizeConfig().deviceWidth(context) / 2.5,
+                            onPressed: () {
+                              Get.back();
+                            },
+                            txtButton: 'Back',
+                          ),
+                          Button(
+                            disable: false,
+                            width: SizeConfig().deviceWidth(context) / 2.5,
+                            onPressed: () {
+                              dialog(
+                                title: 'Upload Success',
+                                subtitle:
+                                    'Your recipe has been uploaded, you can see it on your profile',
+                                icon: Image.asset(AssetImages.emoticonParty),
+                                txtButton: 'Back to Home',
+                                onPressed: () {
+                                  Get.offAllNamed('/home');
+                                },
+                              );
+                            },
+                            txtButton: 'Done',
+                            color: AppColors.primary,
+                          ),
+                        ],
                       ),
                     ),
                   ],

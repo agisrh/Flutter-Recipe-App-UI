@@ -26,9 +26,9 @@ class PasswordRecoveryScreen extends StatelessWidget {
                   ),
                   textfieldIcon(
                     controller: passwordC.username,
-                    hintText: 'Email or phone number',
+                    hintText: 'Email address',
                     icon: SvgPicture.asset(AssetIcons.message),
-                    isRequired: 'Email or phone number is required !',
+                    isRequired: 'Email is required !',
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 10),

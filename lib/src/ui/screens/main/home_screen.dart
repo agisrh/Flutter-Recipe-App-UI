@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:recipe_app/src/ui/screens/demo.dart';
 import 'package:recipe_app/src/ui/screens/user/profile_screen.dart';
 import 'package:recipe_app/src/ui/utils/helper_util.dart';
 import 'package:recipe_app/src/ui/screens/main/dashboard_screen.dart';
@@ -17,13 +16,13 @@ class HomeScreen extends StatelessWidget {
       Step1Screen(),
       DashboardScreen(),
       NotificationScreen(),
-      Sample2(),
+      ProfileScreen(),
     ];
     final navC = Get.put(NavbarController());
     return Obx(
       () => Scaffold(
         body: _pages.elementAt(navC.index.value),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButtonLocation: const FixedCenterDockedFabLocation(),
         floatingActionButton: FloatingActionButton(
           backgroundColor: AppColors.primary,
           onPressed: () {
@@ -95,6 +94,26 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class FixedCenterDockedFabLocation extends StandardFabLocation
+    with FabCenterOffsetX, FabDockedOffsetY {
+  const FixedCenterDockedFabLocation();
+
+  @override
+  String toString() => 'FloatingActionButtonLocation.fixedCenterDocked';
+
+  @override
+  double getOffsetY(
+      ScaffoldPrelayoutGeometry scaffoldGeometry, double adjustment) {
+    final double contentBottom = scaffoldGeometry.contentBottom;
+    final double bottomMinInset = scaffoldGeometry.minInsets.bottom;
+    if (bottomMinInset > 0) {
+      // Hide if there's a keyboard
+      return contentBottom;
+    }
+    return super.getOffsetY(scaffoldGeometry, adjustment);
   }
 }
 

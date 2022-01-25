@@ -25,7 +25,7 @@ This is a normal flutter app. You should follow the instructions in the [officia
 * Flutter Icon
 * Dotted Border
 * Pin Code Fields
-## Authors
+## Author
 
 [Agis R Herdiana](https://www.github.com/agisrh)
 

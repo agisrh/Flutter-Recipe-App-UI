@@ -1,16 +1,39 @@
-# recipe_app
 
-A new Flutter project.
+# Chefio Flutter UI
 
-## Getting Started
+This is implementation figma design into Flutter code.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Table of Contents
+- [Quick Start](#quick-start)
+- [Package Used](#package-used)
+- [Authors](#authors)
+- [Thanks](#thanks)
+- [Copyright and license](#copyright-and-license)
+## Quick Start
+This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
+## Package Used
+* Getx State Management
+* Cache Image Newtork
+* Shimmer
+* Flutter SVG
+* Flutter Icon
+* Dotted Border
+* Pin Code Fields
+## Authors
+
+[Agis R Herdiana](https://www.github.com/agisrh)
+
+
+## Thanks
+
+Thanks to [Choirul Syafril](https://www.behance.net/gallery/109160303/Freebies-Chefio-Recipe-App-UI-Kit) for awesome design
+## Copyright and License
+
+Code and documentation copyright 2022 the authors. Code released under the [MIT License](https://github.com/agisrh/recipe_app/blob/master/LICENSE).
+

@@ -6,7 +6,7 @@ This is implementation figma design into Flutter code.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![myfile](https://github.com/agisrh/recipe_app/blob/master/screenshoot/screenshoot.gif?raw=true)
 
 
 ## Table of Contents

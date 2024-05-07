@@ -3,9 +3,14 @@
 
 This is implementation figma design into Flutter code.
 
-
-<img src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/screenshoot.gif?raw=true" width="250"/>
-
+## Screenshoot
+<p align="center" width="100%">
+  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoots/login.png?raw=true" width="250"/>
+  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoots/dashboard.png?raw=true" width="250"/>
+  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoots/recipe.png?raw=true" width="250"/>
+  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoots/notification.png?raw=true" width="250"/>
+  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoots/profile.png?raw=true" width="250"/>
+</p>
 
 ## Table of Contents
 - [Quick Start](#quick-start)

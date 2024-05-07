@@ -5,11 +5,11 @@ This is implementation figma design into Flutter code.
 
 ## Screenshoot
 <p align="center" width="100%">
-  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/login.png?raw=true" width="150"/>
-  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/dashboard.png?raw=true" width="150"/>
-  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/recipe.png?raw=true" width="150"/>
-  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/notification.png?raw=true" width="150"/>
-  <img width="20%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/profile.png?raw=true" width="150"/>
+  <img width="18%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/login.png?raw=true" width="200"/>
+  <img width="18%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/dashboard.png?raw=true" width="200"/>
+  <img width="18%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/recipe.png?raw=true" width="200"/>
+  <img width="18%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/notification.png?raw=true" width="200"/>
+  <img width="18%" src="https://github.com/agisrh/Flutter-Recipe-App-UI/blob/master/screenshoot/profile.png?raw=true" width="200"/>
 </p>
 
 ## Table of Contents

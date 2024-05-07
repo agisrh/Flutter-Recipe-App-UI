@@ -3,12 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:get/get.dart';
 import 'package:recipe_app/src/ui/utils/helper_util.dart';
-import 'package:recipe_app/src/ui/widgets/form_widget.dart';
 import 'package:recipe_app/src/core/controllers/helper_controller.dart';
 import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final loginC = Get.put(LoginController());
@@ -19,7 +20,7 @@ class LoginScreen extends StatelessWidget {
           child: Form(
             key: _formKey,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 24),
+              margin: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
                   titleGreeting(
@@ -43,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    child: Align(
+                    child: const Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         'Forgot password?',
@@ -54,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                     onTap: () => Get.toNamed('/auth/password/recovery'),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 50, bottom: 24),
+                    margin: const EdgeInsets.only(top: 50, bottom: 24),
                     child: Button(
                       disable: false,
                       onPressed: () {
@@ -66,14 +67,14 @@ class LoginScreen extends StatelessWidget {
                       color: AppColors.primary,
                     ),
                   ),
-                  Text('Or continue with', style: TextTypography.sP2),
+                  const Text('Or continue with', style: TextTypography.sP2),
                   Container(
-                    margin: EdgeInsets.only(top: 24, bottom: 24),
+                    margin: const EdgeInsets.only(top: 24, bottom: 24),
                     child: ButtonIcon(
                       onPressed: () {},
                       txtButton: 'Google',
                       color: AppColors.secondary,
-                      icon: Icon(
+                      icon: const Icon(
                         FontAwesome.google,
                         color: Colors.white,
                         size: 20,

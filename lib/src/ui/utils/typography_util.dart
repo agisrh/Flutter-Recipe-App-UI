@@ -55,7 +55,7 @@ class TextTypography {
     color: AppColors.secondaryText,
   );
 
-  static const TextStyle p1_primary = TextStyle(
+  static const TextStyle p1Primary = TextStyle(
     color: AppColors.primary,
     fontWeight: FontWeight.w700,
   );

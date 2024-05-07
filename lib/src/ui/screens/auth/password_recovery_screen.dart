@@ -7,6 +7,8 @@ import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
 class PasswordRecoveryScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  PasswordRecoveryScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final passwordC = Get.put(PasswordController());
@@ -17,7 +19,7 @@ class PasswordRecoveryScreen extends StatelessWidget {
           child: Form(
             key: _formKey,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 24),
+              margin: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
                   titleGreeting(
@@ -31,7 +33,7 @@ class PasswordRecoveryScreen extends StatelessWidget {
                     isRequired: 'Email is required !',
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: Button(
                       disable: false,
                       onPressed: () {

@@ -15,7 +15,7 @@ class Routes {
   static final pages = [
     GetPage(
       name: '/intro/onboarding',
-      page: () => OnboardingScreen(),
+      page: () => const OnboardingScreen(),
     ),
     GetPage(
       name: '/auth/login',
@@ -27,7 +27,7 @@ class Routes {
     ),
     GetPage(
       name: '/auth/verify',
-      page: () => VerifyScreen(),
+      page: () => const VerifyScreen(),
     ),
     GetPage(
       name: '/auth/password/recovery',
@@ -39,15 +39,15 @@ class Routes {
     ),
     GetPage(
       name: '/home',
-      page: () => HomeScreen(),
+      page: () => const HomeScreen(),
     ),
     GetPage(
       name: '/search/form',
-      page: () => SearchFormScreen(),
+      page: () => const SearchFormScreen(),
     ),
     GetPage(
       name: '/recipe/detail',
-      page: () => DetailReciperScreen(),
+      page: () => const DetailReciperScreen(),
     ),
     GetPage(
       name: '/upload/step/1',

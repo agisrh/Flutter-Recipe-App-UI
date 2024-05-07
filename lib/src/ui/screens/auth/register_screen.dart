@@ -7,6 +7,8 @@ import 'package:recipe_app/src/core/controllers/helper_controller.dart';
 
 class RegisterScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  RegisterScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final registerC = Get.put(RegisterController());
@@ -18,7 +20,7 @@ class RegisterScreen extends StatelessWidget {
             child: Form(
               key: _formKey,
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 24),
+                margin: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   children: [
                     titleGreeting(
@@ -38,7 +40,7 @@ class RegisterScreen extends StatelessWidget {
                       icon: SvgPicture.asset(AssetIcons.lock),
                       onTap: () => registerC.visiblePassword(),
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Your Password must contain:',
@@ -46,17 +48,17 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 15),
+                      margin: const EdgeInsets.only(top: 15),
                       child: Column(
                         children: [
                           itemContain(
                               label: 'Atleast 8 characters',
                               isOk: registerC.eightChars.value),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                           itemContain(
                               label: 'Contains a number',
                               isOk: registerC.hasNumber.value),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                           itemContain(
                               label: 'Contains a special character',
                               isOk: registerC.hasSpecialCharacters.value),
@@ -64,7 +66,7 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 50, bottom: 24),
+                      margin: const EdgeInsets.only(top: 50, bottom: 24),
                       child: Button(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {

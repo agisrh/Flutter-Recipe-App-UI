@@ -13,7 +13,7 @@ Widget textfieldIcon({
   required TextEditingController controller,
 }) {
   return Padding(
-    padding: EdgeInsets.only(bottom: 25),
+    padding: const EdgeInsets.only(bottom: 25),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,27 +22,28 @@ Widget textfieldIcon({
           decoration: InputDecoration(
             isDense: true,
             hintText: hintText,
-            hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
+            hintStyle:
+                const TextStyle(fontSize: 15, color: AppColors.secondaryText),
             prefixIcon: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 vertical: 5,
                 horizontal: 15,
               ),
               child: icon,
             ),
-            border: OutlineInputBorder(
+            border: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
               borderSide: BorderSide(color: AppColors.outline, width: 1),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
               borderSide: BorderSide(color: AppColors.outline, width: 1),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
               borderSide: BorderSide(color: AppColors.primary, width: 1.5),
             ),
-            errorBorder: OutlineInputBorder(
+            errorBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
               borderSide: BorderSide(color: AppColors.secondary, width: 1),
             ),
@@ -50,7 +51,7 @@ Widget textfieldIcon({
           validator: (value) {
             if (isRequired != '') {
               if (value!.isEmpty) {
-                return '$isRequired';
+                return isRequired;
               }
             }
             return null;
@@ -70,7 +71,7 @@ Widget textfieldPassword({
   required GestureTapCallback onTap,
 }) {
   return Padding(
-    padding: EdgeInsets.only(bottom: 25),
+    padding: const EdgeInsets.only(bottom: 25),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -80,9 +81,10 @@ Widget textfieldPassword({
           decoration: InputDecoration(
             isDense: true,
             hintText: hintText,
-            hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
+            hintStyle:
+                const TextStyle(fontSize: 15, color: AppColors.secondaryText),
             prefixIcon: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 vertical: 5,
                 horizontal: 15,
               ),
@@ -90,7 +92,7 @@ Widget textfieldPassword({
             ),
             suffixIcon: InkWell(
               child: Padding(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 5,
                   horizontal: 15,
                 ),
@@ -106,19 +108,19 @@ Widget textfieldPassword({
                 onTap();
               },
             ),
-            border: OutlineInputBorder(
+            border: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
               borderSide: BorderSide(color: AppColors.outline, width: 1),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
               borderSide: BorderSide(color: AppColors.outline, width: 1),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
               borderSide: BorderSide(color: AppColors.primary, width: 1.5),
             ),
-            errorBorder: OutlineInputBorder(
+            errorBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
               borderSide: BorderSide(color: AppColors.secondary, width: 1),
             ),
@@ -126,7 +128,7 @@ Widget textfieldPassword({
           validator: (value) {
             if (isRequired != '') {
               if (value!.isEmpty) {
-                return '$isRequired';
+                return isRequired;
               }
             }
             return null;
@@ -146,7 +148,7 @@ Widget passwordRegister({
   required GestureTapCallback onTap,
 }) {
   return Padding(
-    padding: EdgeInsets.only(bottom: 25),
+    padding: const EdgeInsets.only(bottom: 25),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -156,9 +158,10 @@ Widget passwordRegister({
           decoration: InputDecoration(
             isDense: true,
             hintText: hintText,
-            hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
+            hintStyle:
+                const TextStyle(fontSize: 15, color: AppColors.secondaryText),
             prefixIcon: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 vertical: 5,
                 horizontal: 15,
               ),
@@ -166,7 +169,7 @@ Widget passwordRegister({
             ),
             suffixIcon: InkWell(
               child: Padding(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 5,
                   horizontal: 15,
                 ),
@@ -182,19 +185,19 @@ Widget passwordRegister({
                 onTap();
               },
             ),
-            border: OutlineInputBorder(
+            border: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
               borderSide: BorderSide(color: AppColors.outline, width: 1),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
               borderSide: BorderSide(color: AppColors.outline, width: 1),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
               borderSide: BorderSide(color: AppColors.primary, width: 1.5),
             ),
-            errorBorder: OutlineInputBorder(
+            errorBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
               borderSide: BorderSide(color: AppColors.secondary, width: 1),
             ),
@@ -202,7 +205,7 @@ Widget passwordRegister({
           validator: (value) {
             if (isRequired != '') {
               if (value!.isEmpty) {
-                return '$isRequired';
+                return isRequired;
               }
             }
             return null;
@@ -232,11 +235,9 @@ Widget textfieldOTP({
       inactiveColor: AppColors.outline,
     ),
     cursorColor: Colors.black,
-    animationDuration: Duration(milliseconds: 300),
+    animationDuration: const Duration(milliseconds: 300),
     keyboardType: TextInputType.number,
-    onCompleted: (v) {
-      print("Completed");
-    },
+    onCompleted: (v) {},
     onChanged: (value) {},
   );
 }
@@ -251,21 +252,21 @@ Widget textfield({
     decoration: InputDecoration(
       isDense: true,
       hintText: hintText,
-      contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
-      hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
-      border: OutlineInputBorder(
+      contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 19),
+      hintStyle: const TextStyle(fontSize: 15, color: AppColors.secondaryText),
+      border: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(32)),
         borderSide: BorderSide(color: AppColors.outline, width: 1),
       ),
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(32)),
         borderSide: BorderSide(color: AppColors.outline, width: 1),
       ),
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(32.0)),
         borderSide: BorderSide(color: AppColors.primary, width: 1.5),
       ),
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(32.0)),
         borderSide: BorderSide(color: AppColors.secondary, width: 1),
       ),
@@ -273,7 +274,7 @@ Widget textfield({
     validator: (value) {
       if (isRequired != '') {
         if (value!.isEmpty) {
-          return '$isRequired';
+          return isRequired;
         }
       }
       return null;
@@ -282,7 +283,7 @@ Widget textfield({
 }
 
 Widget searchForm({required BuildContext context, bool redirect = false}) {
-  final searchC = Get.put(SearchController());
+  final searchC = Get.put(SearchFormController());
   return Obx(
     () => TextFormField(
       onTap: () {
@@ -293,24 +294,24 @@ Widget searchForm({required BuildContext context, bool redirect = false}) {
       },
       controller: searchC.search,
       cursorColor: AppColors.mainText,
-      style: TextStyle(fontSize: 15, color: AppColors.mainText),
+      style: const TextStyle(fontSize: 15, color: AppColors.mainText),
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.form,
         hintText: "Search",
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           fontSize: 15,
           color: AppColors.secondaryText,
         ),
         prefixIcon: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 5,
             horizontal: 15,
           ),
           child: SvgPicture.asset(AssetIcons.search),
         ),
         suffixIcon: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 5,
             horizontal: 15,
           ),
@@ -325,19 +326,19 @@ Widget searchForm({required BuildContext context, bool redirect = false}) {
             onTap: () => searchC.clearForm(),
           ),
         ),
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(32)),
           borderSide: BorderSide(color: AppColors.form, width: 1),
         ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(32)),
           borderSide: BorderSide(color: AppColors.form, width: 1),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(32.0)),
           borderSide: BorderSide(color: AppColors.form, width: 1),
         ),
-        errorBorder: OutlineInputBorder(
+        errorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(32.0)),
           borderSide: BorderSide(color: AppColors.form, width: 1),
         ),
@@ -359,20 +360,20 @@ Widget textarea({
     controller: controller,
     decoration: InputDecoration(
       hintText: hintText,
-      hintStyle: TextStyle(fontSize: 15, color: AppColors.secondaryText),
-      border: OutlineInputBorder(
+      hintStyle: const TextStyle(fontSize: 15, color: AppColors.secondaryText),
+      border: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(8)),
         borderSide: BorderSide(color: AppColors.outline, width: 1),
       ),
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(8)),
         borderSide: BorderSide(color: AppColors.outline, width: 1),
       ),
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(8)),
         borderSide: BorderSide(color: AppColors.primary, width: 1.5),
       ),
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(8)),
         borderSide: BorderSide(color: AppColors.secondary, width: 1),
       ),
@@ -380,7 +381,7 @@ Widget textarea({
     validator: (value) {
       if (isRequired != '') {
         if (value!.isEmpty) {
-          return '$isRequired';
+          return isRequired;
         }
       }
       return null;
@@ -390,7 +391,7 @@ Widget textarea({
 
 Widget labelForm({required String label}) {
   return Container(
-    margin: EdgeInsets.only(top: 24, bottom: 10),
+    margin: const EdgeInsets.only(top: 24, bottom: 10),
     child: Align(
       alignment: Alignment.centerLeft,
       child: Text(label, style: TextTypography.mH2),
@@ -400,7 +401,7 @@ Widget labelForm({required String label}) {
 
 Widget richLabel({required String title1, required String title2}) {
   return Container(
-    padding: EdgeInsets.only(top: 30, bottom: 15),
+    padding: const EdgeInsets.only(top: 30, bottom: 15),
     child: RichText(
       text: TextSpan(
         text: title1,
@@ -408,7 +409,7 @@ Widget richLabel({required String title1, required String title2}) {
         children: <TextSpan>[
           TextSpan(
             text: title2,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 15.0,
               color: AppColors.secondaryText,
             ),

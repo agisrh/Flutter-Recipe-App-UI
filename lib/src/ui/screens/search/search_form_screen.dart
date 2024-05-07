@@ -7,23 +7,25 @@ import 'package:recipe_app/src/ui/utils/helper_util.dart';
 import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
 class SearchFormScreen extends StatelessWidget {
+  const SearchFormScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<String> choice = ['Sushi', 'Sandwich', 'Seafood', 'Fried rice'];
     //final filterC = Get.put(SearchController());
-    final SearchController filterC = Get.find();
+    final SearchFormController filterC = Get.find();
     return Scaffold(
       backgroundColor: AppColors.bgColor,
       body: Obx(
         () => ListView(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 24),
+                  margin: const EdgeInsets.symmetric(horizontal: 24),
                   child: GestureDetector(
-                    child: Icon(Icons.arrow_back_ios, size: 20),
+                    child: const Icon(Icons.arrow_back_ios, size: 20),
                     onTap: () {
                       Get.back();
                     },
@@ -33,7 +35,7 @@ class SearchFormScreen extends StatelessWidget {
                   child: searchForm(context: context),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 24),
+                  margin: const EdgeInsets.symmetric(horizontal: 24),
                   child: GestureDetector(
                     child: SvgPicture.asset(AssetIcons.filter),
                     onTap: () => bottomFilter(context),
@@ -42,7 +44,7 @@ class SearchFormScreen extends StatelessWidget {
               ],
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 24),
+              margin: const EdgeInsets.symmetric(vertical: 24),
               child: divider(),
             ),
             filterC.isFilter.value
@@ -50,8 +52,8 @@ class SearchFormScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Container(
-                          margin: EdgeInsets.symmetric(horizontal: 24),
-                          child: PopularRecipeScreen(),
+                          margin: const EdgeInsets.symmetric(horizontal: 24),
+                          child: const PopularRecipeScreen(),
                         ),
                       ),
                     ],
@@ -61,10 +63,10 @@ class SearchFormScreen extends StatelessWidget {
                       searchHistory(text: '${filterC.isFilter.value}'),
                       searchHistory(text: 'Salad'),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 24),
+                        margin: const EdgeInsets.symmetric(vertical: 24),
                         child: divider(),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 24),
                         child: Align(
                           alignment: Alignment.centerLeft,
@@ -73,7 +75,7 @@ class SearchFormScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 24),
+                        margin: const EdgeInsets.symmetric(horizontal: 24),
                         child: buildFilter(choice),
                       ),
                     ],
@@ -86,64 +88,62 @@ class SearchFormScreen extends StatelessWidget {
 
   Future bottomFilter(BuildContext context) {
     List<String> choice = ['All', 'Food', 'Drink'];
-    final filterCtrl = Get.put(SearchController());
+    final filterCtrl = Get.put(SearchFormController());
     return Get.bottomSheet(
-      Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 25),
-                  child: Text('Add a Filter', style: TextTypography.mH2),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 25),
+                child: const Text('Add a Filter', style: TextTypography.mH2),
+              ),
+            ),
+            const Text('Category', style: TextTypography.mH2),
+            buildFilter(choice),
+            richLabel(title1: 'Cooking Duration', title2: ' (in minutes)'),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('<10', style: TextTypography.p1Primary),
+                Text('30', style: TextTypography.p1Primary),
+                Text('>60', style: TextTypography.p1Primary)
+              ],
+            ),
+            buildSlider(),
+            const SizedBox(height: 35),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ButtonDefault(
+                  width: SizeConfig().deviceWidth(context) / 2.5,
+                  onPressed: () {
+                    Get.back();
+                  },
+                  txtButton: 'Cancel',
                 ),
-              ),
-              Text('Category', style: TextTypography.mH2),
-              buildFilter(choice),
-              richLabel(title1: 'Cooking Duration', title2: ' (in minutes)'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('<10', style: TextTypography.p1_primary),
-                  Text('30', style: TextTypography.p1_primary),
-                  Text('>60', style: TextTypography.p1_primary)
-                ],
-              ),
-              buildSlider(),
-              SizedBox(height: 35),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ButtonDefault(
-                    width: SizeConfig().deviceWidth(context) / 2.5,
-                    onPressed: () {
-                      Get.back();
-                    },
-                    txtButton: 'Cancel',
-                  ),
-                  Button(
-                    disable: false,
-                    width: SizeConfig().deviceWidth(context) / 2.5,
-                    onPressed: () {
-                      filterCtrl.filter();
-                      Get.back();
-                    },
-                    txtButton: 'Done',
-                    color: AppColors.primary,
-                  ),
-                ],
-              ),
-            ],
-          ),
+                Button(
+                  disable: false,
+                  width: SizeConfig().deviceWidth(context) / 2.5,
+                  onPressed: () {
+                    filterCtrl.filter();
+                    Get.back();
+                  },
+                  txtButton: 'Done',
+                  color: AppColors.primary,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       elevation: 20.0,
       enableDrag: false,
       backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32.0),
           topRight: Radius.circular(32.0),

@@ -7,6 +7,8 @@ import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  ChangePasswordScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final passwordC = Get.put(PasswordController());
@@ -18,7 +20,7 @@ class ChangePasswordScreen extends StatelessWidget {
             child: Form(
               key: _formKey,
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 24),
+                margin: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   children: [
                     titleGreeting(
@@ -32,7 +34,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       icon: SvgPicture.asset(AssetIcons.lock),
                       onTap: () => passwordC.visiblePassword(),
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Your Password must contain:',
@@ -40,17 +42,17 @@ class ChangePasswordScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 15),
+                      margin: const EdgeInsets.only(top: 15),
                       child: Column(
                         children: [
                           itemContain(
                               label: 'Atleast 8 characters',
                               isOk: passwordC.eightChars.value),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                           itemContain(
                               label: 'Contains a number',
                               isOk: passwordC.hasNumber.value),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                           itemContain(
                               label: 'Contains a special character',
                               isOk: passwordC.hasSpecialCharacters.value),
@@ -58,7 +60,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 50, bottom: 24),
+                      margin: const EdgeInsets.only(top: 50, bottom: 24),
                       child: Button(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {

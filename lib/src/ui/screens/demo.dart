@@ -3,6 +3,8 @@ import 'package:recipe_app/src/core/functions/network_image.dart';
 import 'package:recipe_app/src/ui/utils/helper_util.dart';
 
 class Sample2 extends StatelessWidget {
+  const Sample2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,24 +46,24 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
         Container(
           height: 500,
           color: AppColors.bgColor,
-          margin: EdgeInsets.only(top: 10, left: 16),
+          margin: const EdgeInsets.only(top: 10, left: 16),
           child: Opacity(
             opacity: shrinkOffset / expandedHeight,
             child: Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 24),
+                  margin: const EdgeInsets.only(right: 24),
                   height: 46,
                   width: 46,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),
-                    child: PNetworkImage(
+                    child: const PNetworkImage(
                       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                Text("Food", style: TextTypography.mH1),
+                const Text("Food", style: TextTypography.mH1),
               ],
             ),
           ),
@@ -74,10 +76,10 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
             child: Container(
               height: 200,
               width: 200,
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(100),
-                child: PNetworkImage(
+                child: const PNetworkImage(
                   'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
                   fit: BoxFit.cover,
                 ),

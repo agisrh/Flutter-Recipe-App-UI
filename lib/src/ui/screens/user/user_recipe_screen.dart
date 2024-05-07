@@ -3,6 +3,8 @@ import 'package:recipe_app/src/core/models/helper_model.dart';
 import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
 class UserRecipeScreen extends StatelessWidget {
+  const UserRecipeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<RecipeModel> recipes = [
@@ -52,7 +54,7 @@ class UserRecipeScreen extends StatelessWidget {
     ];
     return GridView.builder(
       shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
         mainAxisExtent: 220,
         childAspectRatio: 1,

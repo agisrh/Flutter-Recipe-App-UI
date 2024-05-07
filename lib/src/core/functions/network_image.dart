@@ -34,11 +34,11 @@ class PNetworkImage extends StatelessWidget {
         baseColor: Colors.black12,
         highlightColor: Colors.white10,
         child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
           color: Colors.amberAccent,
         )),
       ),
-      errorWidget: (context, url, error) => Center(
+      errorWidget: (context, url, error) => const Center(
         child: Icon(Icons.error),
       ),
     );

@@ -13,9 +13,9 @@ Widget userActivity({
   bool disable = false,
 }) {
   return ListTile(
-    contentPadding: EdgeInsets.all(0),
+    contentPadding: const EdgeInsets.all(0),
     leading: Container(
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       height: 48,
       width: 48,
       child: ClipRRect(
@@ -50,7 +50,7 @@ Widget postActivity({
   required String urlPostImg,
 }) {
   return ListTile(
-    contentPadding: EdgeInsets.all(0),
+    contentPadding: const EdgeInsets.all(0),
     leading: ColumnSuper(
       innerDistance: -30.0,
       alignment: Alignment.centerLeft,
@@ -58,7 +58,7 @@ Widget postActivity({
         Container(
           height: 45,
           width: 45,
-          margin: EdgeInsets.only(left: 10),
+          margin: const EdgeInsets.only(left: 10),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: PNetworkImage(
@@ -71,7 +71,7 @@ Widget postActivity({
           height: 50,
           width: 50,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(50),
             ),
             border: Border.all(
@@ -110,7 +110,7 @@ Widget postActivity({
                   text: user1,
                   style: TextTypography.mH3,
                 ),
-                TextSpan(
+                const TextSpan(
                   text: ' and ',
                   style: TextStyle(
                     fontSize: 15,
@@ -128,13 +128,13 @@ Widget postActivity({
       ],
     ),
     subtitle: Container(
-      margin: EdgeInsets.only(top: 5),
+      margin: const EdgeInsets.only(top: 5),
       child: Text(
         '$activity ・ $time',
         style: TextTypography.category,
       ),
     ),
-    trailing: Container(
+    trailing: SizedBox(
       height: 64,
       width: 60,
       child: ClipRRect(

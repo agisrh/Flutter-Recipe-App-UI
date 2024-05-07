@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:get/get.dart';
 import 'package:recipe_app/src/core/controllers/helper_controller.dart';
-import 'package:recipe_app/src/ui/utils/colors_util.dart';
 import 'package:recipe_app/src/ui/utils/helper_util.dart';
 import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
@@ -15,7 +14,7 @@ Widget richTextLink(
   return RichText(
     text: TextSpan(
       text: title,
-      style: TextStyle(
+      style: const TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 15.0,
         color: AppColors.mainText,
@@ -23,7 +22,7 @@ Widget richTextLink(
       children: <TextSpan>[
         TextSpan(
           text: ' $linkText',
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 15.0,
             color: AppColors.primary,
@@ -44,7 +43,7 @@ Widget itemContain({required String label, required bool isOk}) {
       isOk
           ? SvgPicture.asset(AssetIcons.checkGreen)
           : SvgPicture.asset(AssetIcons.checkGrey),
-      SizedBox(width: 8),
+      const SizedBox(width: 8),
       Text(
         label,
         style: TextStyle(
@@ -59,7 +58,7 @@ Widget listItem({required String label}) {
     mainAxisSize: MainAxisSize.min,
     children: [
       SvgPicture.asset(AssetIcons.checkGreen),
-      SizedBox(width: 8),
+      const SizedBox(width: 8),
       Text(
         label,
         style: TextTypography.mP2,
@@ -71,20 +70,20 @@ Widget listItem({required String label}) {
 Widget titleGreeting({required String title, required String subtitle}) {
   return Column(
     children: [
-      SizedBox(height: 50),
+      const SizedBox(height: 50),
       Text(
         title,
         style: TextTypography.mH1,
       ),
       Container(
-        margin: EdgeInsets.only(top: 8),
+        margin: const EdgeInsets.only(top: 8),
         child: Text(
           subtitle,
           style: TextTypography.sP2,
           textAlign: TextAlign.center,
         ),
       ),
-      SizedBox(height: 32),
+      const SizedBox(height: 32),
     ],
   );
 }
@@ -97,12 +96,12 @@ Future dialog(
     required GestureTapCallback onPressed}) {
   return Get.defaultDialog(
     title: '',
-    contentPadding: EdgeInsets.symmetric(horizontal: 20),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 20),
     content: Column(
       children: [
         icon,
         Container(
-          padding: EdgeInsets.only(top: 32, bottom: 8),
+          padding: const EdgeInsets.only(top: 32, bottom: 8),
           child: Text(
             title,
             style: TextTypography.mH1,
@@ -114,7 +113,7 @@ Future dialog(
           textAlign: TextAlign.center,
         ),
         Container(
-          margin: EdgeInsets.symmetric(vertical: 24),
+          margin: const EdgeInsets.symmetric(vertical: 24),
           child: Button(
             onPressed: () {
               onPressed();
@@ -136,18 +135,22 @@ Widget buildFilter(List choice) {
         choice.length,
         (int index) {
           return Container(
-            margin: EdgeInsets.only(right: 12, top: 16),
+            margin: const EdgeInsets.only(right: 12, top: 16),
             child: ChoiceChip(
               pressElevation: 0,
+              showCheckmark: false,
+              side: BorderSide.none,
               backgroundColor: AppColors.form,
               selectedColor: AppColors.primary,
               labelStyle: controller.choice.value == index
-                  ? TextStyle(color: Colors.white, fontWeight: FontWeight.w700)
-                  : TextStyle(
+                  ? const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w700)
+                  : const TextStyle(
                       color: AppColors.secondaryText,
                       fontWeight: FontWeight.w500,
                     ),
-              labelPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 5),
+              labelPadding:
+                  const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
               label: Text(choice[index]),
               selected: controller.choice.value == index,
               onSelected: (bool selected) {
@@ -184,6 +187,7 @@ Widget buildSlider() {
 }
 
 class CustomTrackShape extends RoundedRectSliderTrackShape {
+  @override
   Rect getPreferredRect({
     required RenderBox parentBox,
     Offset offset = Offset.zero,
@@ -191,7 +195,7 @@ class CustomTrackShape extends RoundedRectSliderTrackShape {
     bool isEnabled = false,
     bool isDiscrete = false,
   }) {
-    final double trackHeight = 3;
+    const double trackHeight = 3;
     final double trackLeft = offset.dx;
     final double trackTop =
         offset.dy + (parentBox.size.height - trackHeight) / 2;
@@ -207,7 +211,7 @@ Widget divider() {
 Widget searchHistory({required String text}) {
   return ListTile(
     dense: true,
-    leading: Icon(Entypo.clock, color: AppColors.secondaryText),
+    leading: const Icon(Entypo.clock, color: AppColors.secondaryText),
     title: Text(text, style: TextTypography.mH2_500),
     trailing: SvgPicture.asset(AssetIcons.arrowUpward),
   );
@@ -219,10 +223,10 @@ Widget uploadIcon({required String title, required String subtitle}) {
     children: <Widget>[
       SvgPicture.asset(AssetIcons.image),
       Container(
-        margin: EdgeInsets.symmetric(vertical: 5),
+        margin: const EdgeInsets.symmetric(vertical: 5),
         child: Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w700,
             color: AppColors.titleText,
@@ -231,7 +235,7 @@ Widget uploadIcon({required String title, required String subtitle}) {
       ),
       Text(
         subtitle,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 12,
           color: AppColors.secondaryText,
         ),
@@ -246,7 +250,7 @@ Widget pagination({required String currentPage, required String nextPage}) {
     children: [
       InkWell(
         onTap: () => Get.back(),
-        child: Text(
+        child: const Text(
           'Cancel',
           style: TextStyle(
             fontSize: 17,
@@ -258,7 +262,7 @@ Widget pagination({required String currentPage, required String nextPage}) {
       RichText(
         text: TextSpan(
           text: '$currentPage/',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w700,
             color: AppColors.titleText,
@@ -266,7 +270,7 @@ Widget pagination({required String currentPage, required String nextPage}) {
           children: <TextSpan>[
             TextSpan(
               text: nextPage,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w700,
                 color: AppColors.secondaryText,
@@ -285,7 +289,7 @@ Widget stepNumber({required int number}) {
     backgroundColor: AppColors.mainText,
     child: Text(
       number.toString(),
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
         fontSize: 12,
       ),

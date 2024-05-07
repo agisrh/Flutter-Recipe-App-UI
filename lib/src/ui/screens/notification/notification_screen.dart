@@ -3,17 +3,19 @@ import 'package:recipe_app/src/ui/utils/helper_util.dart';
 import 'package:recipe_app/src/ui/widgets/helper_widget.dart';
 
 class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgColor,
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24),
+        margin: const EdgeInsets.symmetric(horizontal: 24),
         child: ListView(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 24, bottom: 12),
-              child: Text('New', style: TextTypography.mH2),
+              margin: const EdgeInsets.only(top: 24, bottom: 12),
+              child: const Text('New', style: TextTypography.mH2),
             ),
             userActivity(
               name: 'Dean Winchester',
@@ -24,8 +26,8 @@ class NotificationScreen extends StatelessWidget {
               labelButton: 'Follow',
             ),
             Container(
-              margin: EdgeInsets.only(top: 24, bottom: 12),
-              child: Text('Today', style: TextTypography.mH2),
+              margin: const EdgeInsets.only(top: 24, bottom: 12),
+              child: const Text('Today', style: TextTypography.mH2),
             ),
             postActivity(
               user1: 'John Steve',
@@ -61,8 +63,8 @@ class NotificationScreen extends StatelessWidget {
                   'https://images.unsplash.com/photo-1607478900766-efe13248b125',
             ),
             Container(
-              margin: EdgeInsets.only(top: 24, bottom: 12),
-              child: Text('Yesterday', style: TextTypography.mH2),
+              margin: const EdgeInsets.only(top: 24, bottom: 12),
+              child: const Text('Yesterday', style: TextTypography.mH2),
             ),
             userActivity(
               name: 'Dean Winchester',

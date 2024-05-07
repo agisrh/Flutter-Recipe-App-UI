@@ -28,14 +28,14 @@ class RecipeModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['author'] = this.author;
-    data['title'] = this.title;
-    data['category'] = this.category;
-    data['duration'] = this.duration;
-    data['img_author'] = this.imgAuthor;
-    data['img_cover'] = this.imgCover;
-    data['favorite'] = this.favorite;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['author'] = author;
+    data['title'] = title;
+    data['category'] = category;
+    data['duration'] = duration;
+    data['img_author'] = imgAuthor;
+    data['img_cover'] = imgCover;
+    data['favorite'] = favorite;
     return data;
   }
 

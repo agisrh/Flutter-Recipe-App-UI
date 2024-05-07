@@ -8,8 +8,9 @@ class Button extends StatelessWidget {
   final bool disable;
   final double width;
 
-  Button(
-      {required this.onPressed,
+  const Button(
+      {super.key,
+      required this.onPressed,
       required this.txtButton,
       required this.color,
       this.disable = false,
@@ -18,7 +19,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       backgroundColor: disable ? AppColors.form : color,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(32),
         ),
@@ -29,7 +30,7 @@ class Button extends StatelessWidget {
       child: TextButton(
         style: flatButtonStyle,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -60,15 +61,16 @@ class ButtonDefault extends StatelessWidget {
   final GestureTapCallback onPressed;
   final double width;
 
-  ButtonDefault(
-      {required this.onPressed,
+  const ButtonDefault(
+      {super.key,
+      required this.onPressed,
       required this.txtButton,
       this.width = double.infinity});
   @override
   Widget build(BuildContext context) {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       backgroundColor: AppColors.form,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(32),
         ),
@@ -79,14 +81,14 @@ class ButtonDefault extends StatelessWidget {
       child: TextButton(
         style: flatButtonStyle,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
                 txtButton,
                 maxLines: 1,
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppColors.mainText,
                   fontWeight: FontWeight.w700,
                   fontSize: 15,
@@ -110,8 +112,9 @@ class ButtonIcon extends StatelessWidget {
   final double width;
   final Widget icon;
 
-  ButtonIcon(
-      {required this.onPressed,
+  const ButtonIcon(
+      {super.key,
+      required this.onPressed,
       required this.txtButton,
       required this.color,
       this.width = double.infinity,
@@ -120,7 +123,7 @@ class ButtonIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       backgroundColor: color,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(32),
         ),
@@ -131,16 +134,16 @@ class ButtonIcon extends StatelessWidget {
       child: TextButton(
         style: flatButtonStyle,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Container(child: icon),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Text(
                 txtButton,
                 maxLines: 1,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 15,
@@ -165,8 +168,9 @@ class ButtonOutline extends StatelessWidget {
   final bool disable;
   final double width;
 
-  ButtonOutline(
-      {required this.onPressed,
+  const ButtonOutline(
+      {super.key,
+      required this.onPressed,
       required this.txtButton,
       required this.color,
       this.disable = false,
@@ -177,7 +181,7 @@ class ButtonOutline extends StatelessWidget {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       //backgroundColor: disable ? AppColors.form : color,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(32),
         ),
         side:
@@ -189,7 +193,7 @@ class ButtonOutline extends StatelessWidget {
       child: TextButton(
         style: flatButtonStyle,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -221,7 +225,8 @@ class ButtonSM extends StatelessWidget {
   final GestureTapCallback onPressed;
   final bool disable;
 
-  ButtonSM({
+  const ButtonSM({
+    super.key,
     required this.onPressed,
     required this.txtButton,
     required this.color,
@@ -231,7 +236,7 @@ class ButtonSM extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       backgroundColor: disable ? AppColors.form : color,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(32),
         ),
@@ -240,7 +245,7 @@ class ButtonSM extends StatelessWidget {
     return TextButton(
       style: flatButtonStyle,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -273,7 +278,7 @@ Widget btnNavbar({required Widget icon, required String title}) {
         iconSize: 27.0,
         icon: icon,
       ),
-      Container(child: Text(title)),
+      Text(title),
     ],
   );
 }
